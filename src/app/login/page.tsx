@@ -36,6 +36,7 @@ export default function LoginPage() {
       setLoading(false);
     }
   };
+
   return (
     <main className="flex flex-col items-center justify-center min-h-screen py-2 border-gray-500 w-auto h-auto">
       <h1 className="mb-3 text-2xl">{loading ? "Processing" : "Login"}</h1>
