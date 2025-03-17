@@ -27,7 +27,7 @@ export default function LoginPage() {
     try {
       setLoading(true);
       const response = await axios.post("/api/users/login", user);
-      if (response.status === 200) {
+      if (response.data.status === 301) {
         window.alert("User is not verified");
         throw new Error("User not verified");
       }
@@ -78,6 +78,12 @@ export default function LoginPage() {
         className="bg-slate-800 text-white p-4 border-stone-600 rounded-lg mt-3"
       >
         Go to Signup page
+      </Link>
+      <Link
+        href="/resetPassword"
+        className="bg-slate-800 text-white p-4 border-stone-600 rounded-lg mt-3"
+      >
+        Forgot Password
       </Link>
     </main>
   );

@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
     if (!user.isVerified) {
       return NextResponse.json({
         message: "User is not verified",
-        status: 200,
+        status: 301,
       });
     }
 
