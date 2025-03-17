@@ -27,6 +27,10 @@ export default function LoginPage() {
     try {
       setLoading(true);
       const response = await axios.post("/api/users/login", user);
+      if (response.status === 200) {
+        window.alert("User is not verified");
+        throw new Error("User not verified");
+      }
       console.log("Login Success ", response.data);
       toast.success("Login Success");
       router.push("/profile");
